@@ -41,6 +41,20 @@ const config = {
 					loader: 'css-loader'
 				}), //loader es como use, pero por la forma como trabaja este plugin, mejor se usa loader en lugar de use, por ser una forma más compatible para el plugin
 				test: /\.css$/
+			},
+			{
+				//image loader.. primero, todos estos tipos de archivos
+				//jpe?g: jpeg o jpg
+				test: /\.(jpe?g|png|gif|svg)$/,
+				use: [
+					//url-loader necesita una configuración especial. Los tamaños de imágenes
+					//'url-loader', 
+					{
+						loader: 'url-loader',
+						options: { limit: 40000 } //Más de 40kb, en archivo. Menos de 40k, en el bundle (serializado)
+					},
+					'image-webpack-loader' //primero se aplica este
+				]
 			}
 		]
 	},
@@ -52,3 +66,11 @@ const config = {
 };
 
 module.exports = config;
+
+/*
+Para las imágenes vamos a usar dos loaders:
+image-webpack-loader
+url-loader
+
+
+*/
