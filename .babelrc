@@ -1,0 +1,7 @@
+{
+	"presets": ["babel-preset-env"] //babel va a correr este módulo
+}
+
+// Al correr con este plugin, esperamos que el
+// bundle resultante de sum.js ya no tenga la palabra
+// const y que no use arrow function
