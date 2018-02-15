@@ -190,7 +190,7 @@ La desventaja de hacerlo de forma global es que solo se puede tener una versión
 
 ***
 
-# Some loaders
+# Techniques
 
 ## Code spliting
 
